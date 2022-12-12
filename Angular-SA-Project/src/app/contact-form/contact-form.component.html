@@ -1,0 +1,65 @@
+<form 
+  #form='ngForm'
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  class="contact-form d-flex flex-column m-2 w-100">
+
+  <h5 class="contact-form-title text-center"> Reactive Form Validation Example </h5>
+
+  <label for="name"> Nume Prenume: </label>
+  <input type="text"
+    formControlName="name"
+    name="name"
+    placeholder="Ex: Popescu Ion"
+    class="p-2 border border-success rounded mb-2"
+    [ngClass]="form.submitted ? 'ng-touched' : ''">
+  <small
+    *ngIf="(contactForm.controls.name.invalid && contactForm.controls.name.touched)
+      || (contactForm.controls.name.invalid && form.submitted)"
+    class="alert alert-danger">
+      Numele trebuie sa contina cel putin 3 caractere (fara cifre).
+  </small>
+  
+  <label for="email"> Adresa de E-mail: </label>
+  <input type="email"
+    formControlName="email"
+    name="email"
+    placeholder="Ex: popescu.ion@gmail.com"
+    class="p-2 border border-success rounded mb-2"
+    [ngClass]="form.submitted ? 'ng-touched' : ''">
+  <small
+    *ngIf="(contactForm.controls.email.invalid && contactForm.controls.email.touched)
+      || (contactForm.controls.email.invalid && form.submitted)"
+    class="alert alert-danger">
+      Te rog introdu un email valid.
+  </small>
+
+  <label for="subject"> Subiect: </label>
+  <input type="text"
+    formControlName="subject"
+    name="subject"
+    placeholder="Ex: Subiectul tău"
+    class="p-2 border border-success rounded mb-2"
+    [ngClass]="form.submitted ? 'ng-touched' : ''">
+  <small
+    *ngIf="(contactForm.controls.subject.invalid && contactForm.controls.subject.touched)
+      || (contactForm.controls.subject.invalid && form.submitted)"
+    class="alert alert-danger">
+      Subiectul trebuie sa contina cel putin 5 caractere.
+  </small>
+
+  <label for="message"> Mesajul tău: </label>
+  <textarea
+    formControlName="message"
+    name="message"
+    placeholder="Mesajul tau aici.."
+    class="p-2 border border-success rounded mb-2"
+    [ngClass]="form.submitted ? 'ng-touched' : ''"> </textarea>
+  <small
+    *ngIf="(contactForm.controls.message.invalid && contactForm.controls.message.touched) || (contactForm.controls.message.invalid && form.submitted)"
+    class="alert alert-danger">
+      Mesajul trebuie sa contina cel putin 20 caractere.
+  </small>
+  
+  <input class="text-white rounded p-1 border border-success border-2 bg-success bg-gradient link-warning w-25" type="submit" value="TRIMITE" id="submit-contact">
+</form>

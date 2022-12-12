@@ -1,0 +1,15 @@
+form {
+  min-width: 310px;
+}
+
+textarea {
+  min-height: 150px;
+}
+  
+  textarea.ng-invalid.ng-touched {
+    border: red 1px solid!important;
+  }
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid!important;
+}
