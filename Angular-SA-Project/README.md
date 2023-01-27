@@ -1,4 +1,14 @@
-# AngularSAProject
+# Project for the Web Developer course, by Software Academy from Sibiu.
+
+## Live version deployed here: https://angular-reactive-form-validation.netlify.app/
+
+## Benefit:
+  - In order to have correct data in our future Angular application, we have to create in advance a data validation form
+
+## Acceptance criteria:
+  - A Node+Express+MongoDB application is created
+  - The routes representing the CRUD operations are created
+  - The routes are tested using POSTMAN
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
